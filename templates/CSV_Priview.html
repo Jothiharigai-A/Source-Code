@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    
+    .scroll {
+    margin-top: 10px;
+    margin-left: 150px;
+  background-color: aliceblue;
+  background-size: cover;
+  width: 1000px;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 20px;
+}
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+  overflow-x: scroll;
+  height: 610px;
+}
+</style>
+<h3 style="margin-left: 500px;margin-top: 20px;">Dataset Preview</h3>
+<div class="scrollmenu">
+<table class="table" >
+    {% for row in data %}
+      <tr>
+      {% for col in row %}
+      <td>{{ col }}</td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+    </table>
+    <button class="btn btn-info" onclick="clickevent()">Click to Train | Test</button>
+</div>
+<script>
+    function clickevent(){
+        swal({
+            text:"Traning Completed!",
+            timer:4000,
+        });
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+{% endblock %}

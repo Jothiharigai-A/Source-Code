@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+  {% block body %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <div class="login" style="margin-top: 10px;">
+    <div style="width: 100%;">
+      <h1></h1>
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="" placeholder="Enter Name" required="required" />
+        <input type="text" name="" placeholder="Enter Age" required="required" />
+        <input type="text" name="sr" placeholder="Snoring Rate" required="required" />
+        <input type="text" name="rr" placeholder="Respiration Rate" required="required" />
+        <input type="text" name="t" placeholder="Body Temperature(in °F)" required="required" />
+        <input type="text" name="lm" placeholder="Limb Movement" required="required" />
+        <input type="text" name="bo" placeholder="Blood Oxygen(%)" required="required" />
+        <input type="text" name="rem" placeholder="Rapid Eye Movement" required="required" />
+        <input type="text" name="sh" placeholder="Sleeping Hour" required="required" />
+        <input type="text" name="hr" placeholder="Heart Rate" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+      <br>
+      <br>
+    </div>
+    <div ><span style="color: darkorange;font-weight: 800;background-color: rgb(171, 235, 214);padding: 20px;border-radius: 20px 0px;">{{ prediction_text }}</span> </div>  
+  {% endblock %} 
+
+
+
+
+
+
+
+
+

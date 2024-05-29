@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+  {% block body %}
+  <script>
+    window.onload = function () {
+        
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+            text: "Mental Disorder"
+        },
+        axisX: {
+            interval: 1
+        },
+        axisY: {
+            includeZero: true,
+            scaleBreaks: {
+                type: "wavy",
+                customBreaks: [{
+                    startValue: 80,
+                    endValue: 210
+                    },
+                    {
+                        startValue: 230,
+                        endValue: 600
+                    }
+            ]}
+        },
+        data: [{
+            type: "bar",
+            toolTipContent: "<img src=\"https://canvasjs.com/wp-content/uploads/images/gallery/javascript-column-bar-charts/\"{url}\"\" style=\"width:40px; height:20px;\"> <b>{label}</b><br>Budget: ${y}bn<br>{gdp}% of GDP",
+            dataPoints: [
+                { label: "Female", y: 400, gdp:400 },
+                { label: "Male", y: 650, gdp: 650},
+                { label: "Train", y: 700, gdp: 700}
+            ]
+        }]
+    });
+    chart.render();
+    
+    }
+    </script>
+
+  <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+  {% endblock %} 

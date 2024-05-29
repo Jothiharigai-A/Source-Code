@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Mental Disorder Detection</title>
+  <link rel="stylesheet" href="{{url_for('static',filename= 'vendors/feather/feather.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename= 'vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename= 'vendors/css/vendor.bundle.base.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename= 'vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename= 'vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename= 'js/select.dataTables.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename= 'css/vertical-layout-light/style.css')}}">
+  <style>
+    .bg-text {
+  color: black;
+  font-weight: bold;
+  border: none;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 60%;
+  height: 80%;
+
+}
+  </style>
+</head>
+<body onload="checkCookies()">
+  <div class="container-scroller">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" >
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="#"><img src="{{url_for('static',filename='images/logo.svg')}}" class="mr-3" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="#"></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <h4 style="padding-right: 50%;color: black;">Mental Health Detection</h4>
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="icon-menu"></span>
+          </button>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: rgba(219, 227, 228, 0.8);">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Login</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./register">
+              <i class="icon-columns menu-icon"></i>
+              <span class="menu-title">Register</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./preview">
+              <i class="icon-bar-graph menu-icon"></i>
+              <span class="menu-title">Data Preview
+            </span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="icon-grid-2 menu-icon"></i>
+              <span class="menu-title">Precision</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Recall</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div style="text-align: center;background-image: url('static/image/result.png'); background-size: cover;width: 100%;height: 100%; filter: blur(8px)"; class="main-panel"></div>
+        <div class="bg-text">
+        <h1 style="margin-top: 100px; margin-left: 20PX;">Prediction Result:</h1>
+        <h3 style="margin-top: 20px; margin-left: 20PX;" id="demo"></h3>
+      
+      </div>
+    </div>
+  </div>
+  <script>
+    function checkCookies() {
+      var favoritemovie = sessionStorage.getItem("favoriteMovie");
+      console.log(favoritemovie)
+    var text = "";
+    if (window.location.href.charAt(76) == 'Y' ) {
+      text = "Predication is 'Mental Disorder'. <br><br><div style='text-align:left'>Treatments:<br> <BR>*Talking to someone you trust<br> *Looking after your physical health <br>*Steering away from harmful substances <br>*Taking two minutes to focus on the world around you <br>*Seeking professional help</div>";
+    } else {
+      text = "Prediction is 'Normal Person'. <br><br><div style='text-align:left;'>* Boost your mental health:<br>* Stay active <br>* Talk to someone<br>* Appeal to your senses<br>* Take up a relaxation practice<br>* Make sure and contemplation a priority<br>* Don't skimp on sleep<br>* Find purpose and meaning </div>";
+    }
+    document.getElementById("demo").innerHTML = text;
+  }
+  </script>
+  <script src="{{url_for('static',filename= 'vendors/js/vendor.bundle.base.js')}}"></script>
+  <script src="{{url_for('static',filename= 'vendors/chart.js/Chart.min.js')}}"></script>
+  <script src="{{url_for('static',filename= 'vendors/datatables.net/jquery.dataTables.js')}}"></script>
+  <script src="{{url_for('static',filename= 'vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/dataTables.select.min.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/off-canvas.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/hoverable-collapse.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/template.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/settings.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/todolist.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/dashboard.js')}}"></script>
+  <script src="{{url_for('static',filename= 'js/Chart.roundedBarCharts.js')}}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

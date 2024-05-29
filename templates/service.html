@@ -1,0 +1,323 @@
+{% extends 'base.html' %}
+
+  {% block body %}
+
+<div style="margin-left: 1200px; ">
+<a class="login100-form-btn" href="/"><button class="btn btn-danger">Logout</button></a>
+</div>
+<!-- Prediction -->
+<div class="bg-text">
+<form class="container" style="margin-bottom: 50px;width: 700px;" method="" action= '/result'>
+  <h2 style="text-align: center; margin-top: 20px;">Detection</h2>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6">
+      <label>Age</label>
+    </div>
+    <div class="col-md-6 ">
+      <input class="form-control" type="number" name="age" required/>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Heart Beat</label>
+    </div>
+    <div class="col-md-6 ">
+      <input class="form-control" type="number" name="age" required/>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Sleeping Time</label>
+    </div>
+    <div class="col-md-6 ">
+      <input class="form-control" type="number" name="age" required/>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Gender</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+        <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="Gender" value= 'Male' required> Male
+        </label>
+        </div>
+        <div class="form-check-inline">
+        <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="Gender" value= 'Female' required> Female
+        </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="Gender" value= 'Queer'> Queer
+          </label>
+          </div>
+      </h5>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Family History</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="Family_History" value= 'Yes'> Yes
+        </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Family_History" value= 'No'> No
+          </label>
+        </div>
+    </h5>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Relax Time</label>
+    </div>
+    <div class="col-md-6 ">
+      <input class="form-control" type="number" name="age" required/>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Moodswings</label>
+    </div>
+    <h5 style="padding-left: 15px;">
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="Care_Options" value= 'Yes'> Yes
+        </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Care_Options" value= 'No'> No
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Care_Options" value= "Not Sure"> Don't Know
+          </label>
+        </div>
+    </h5>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Blood Oxigen Level</label>
+    </div>
+    <div class="col-md-6 ">
+      <input class="form-control" type="number" name="blood_oxigen_level" />
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Self Employed</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Tech_Company" value= 'Yes'> Yes
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Tech_Company" value= 'No'> No
+            </label>
+          </div>
+      </h5>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Benefits</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Care_Options" value= 'Yes'> Yes
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Care_Options" value= 'No'> No
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Care_Options" value= "Not Sure"> Don't Know
+            </label>
+          </div>
+      </h5>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Care Options</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Seek_Help" value= 'Yes'> Yes
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Seek_Help" value= 'No'> No
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Seek_Help" value= "Don't Know"> Don't Know
+            </label>
+          </div>
+      </h5>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Anonymity</label>
+    </div>
+    <h5 style="padding-left: 15px;">
+      
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Anonymity" value= 'Yes'> High
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Anonymity" value= 'No'> Low
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Anonymity" value= "Don't Know"> Medium
+            </label>
+          </div>
+    
+        
+    </h5>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Leave</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5 style="width: 500px;">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Mental_Health_Consequence" value= 'Yes'> Don't Know
+          </label>
+          </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Mental_Health_Consequence" value= 'Yes'> Somewhat difficult
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Mental_Health_Consequence" value= 'No'> Somewhat easy
+            </label>
+          </div>
+          <br><br>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Mental_Health_Consequence" value= "Maybe"> Very difficult
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Mental_Health_Consequence" value= "Maybe"> Very easy
+            </label>
+          </div>
+      </h5>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Work Interfere</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Coworkes" value= 'Yes'> Anxious 
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Coworkes" value= 'No'> Peace
+            </label>
+          </div>
+      </h5>
+    </div>
+    
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Emotional Response</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Coworkes" value= 'Yes'> Yes
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Coworkes" value= 'No'> No
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Coworkes" value= "Some of them"> Don't Know
+            </label>
+          </div>
+      </h5>
+    </div>
+  </div>
+  
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6 ">
+      <label>Eating Habbit</label>
+    </div>
+    <div class="col-md-6 ">
+      <h5>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Cworkers" value= 'Yes'> Yes
+          </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Cworkers" value= 'No'> No
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="Cworkers" value= "Some of them"> Don't Know
+            </label>
+          </div>
+      </h5>
+    </div>
+  </div>
+   
+  <br>
+  <input type="submit" value="Let's Predict" class="btn btn-info">
+  </form>
+</div>
+<script>
+  var favoritemovie = "Shrek";
+  sessionStorage.setItem("favoriteMovie", favoritemovie);
+</script>
+{% endblock %}
